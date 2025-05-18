@@ -1,0 +1,139 @@
+/* 经典样式 */
+.family-tree.classic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.person.classic {
+    position: relative;
+    margin: 15px 0;
+}
+
+.person.classic .person-node {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.person.classic .person-node:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.person.classic .person-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.person.classic .name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.person.classic .child-order {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.person.classic .gender-icon {
+    margin-left: 8px;
+}
+
+.person.classic .dates {
+    font-size: 12px;
+    color: #777;
+}
+
+.person.classic .children {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.person.classic .children-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    position: relative;
+}
+
+.person.classic .connector {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    height: 15px;
+    width: 2px;
+    background: #ccc;
+}
+
+.person.classic .connector::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 2px;
+    background: #ccc;
+}
+
+.person.classic .spouse-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 15px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+.person.classic .spouse-details .name {
+    display: flex;
+    align-items: center;
+}
+
+.person.classic .spouse-details .connector {
+    position: relative;
+    height: auto;
+    width: auto;
+    margin: 0 10px;
+    background: none;
+}
+
+.person.classic .spouse-details .connector::before {
+    content: '❤';
+    color: #ff6b6b;
+}
+
+.person.classic .generation {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background: #6c757d;
+    color: white;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    z-index: 1;
+} 

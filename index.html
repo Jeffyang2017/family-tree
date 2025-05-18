@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>家族族谱生成器</title>
+    <!-- CSS 文件 -->
+    <!-- 主样式表 -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- 垂直样式族谱 -->
+    <link rel="stylesheet" href="css/vertical-style.css">
+    <!-- 水平样式族谱 -->
+    <link rel="stylesheet" href="css/horizontal-style.css">
+    <!-- 经典样式族谱 -->
+    <link rel="stylesheet" href="css/classic-style.css">
+    <!-- 树形图样式 -->
+    <link rel="stylesheet" href="css/tree-style.css">
+    
+    <!-- 第三方库 -->
+    <!-- XLSX 库用于 Excel 文件解析 -->
+    <script src="js/xlsx.full.min.js"></script>
+    <!-- jsPDF 用于 PDF 导出 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- html2canvas 用于截图 -->
+    <script src="js/html2canvas.min.js"></script>
+    <!-- 农历转换库 -->
+    <script src="js/lunar.js"></script>
+    <!-- 添加jsPDF本地备份以防CDN失效 -->
+    <script>
+        if(typeof window.jspdf === 'undefined') {
+            console.warn('jsPDF CDN加载失败，请考虑添加本地备份');
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>家族族谱生成器</h1>
+        <div class="controls">
+            <div class="file-upload">
+                <input type="file" id="excelFile" accept=".xlsx, .xls"/>
+                <div class="file-help">
+                    <small>上传Excel文件，包含列：人物ID、姓名、性别(男/女)、父亲ID、母亲ID、配偶ID、出生日期、死亡日期</small>
+                </div>
+            </div>
+            <div class="style-selector">
+                <label for="treeStyle">选择族谱样式：</label>
+                <select id="treeStyle">
+                    <option value="vertical">垂直样式</option>
+                    <option value="horizontal">水平样式</option>
+                    <option value="classic">经典样式</option>
+                    <option value="tree">树形图样式</option>
+                </select>
+            </div>
+            <div class="calendar-selector">
+                <label for="calendarStyle">日期显示：</label>
+                <select id="calendarStyle">
+                    <option value="solar">公历</option>
+                    <option value="lunar">农历</option>
+                    <option value="both">公历和农历</option>
+                    <option value="none">不显示</option>
+                </select>
+            </div>
+        </div>
+        <div class="legend">
+            <div class="legend-item">
+                <span class="gender-icon gender-male" title="男性">
+                    <svg viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M20,11V7H16V3H12V7H8V11H12V8L16,12L12,16V13H8V17H12V21H16V17H20V13H16V16L12,12L16,8V11H20Z" />
+                    </svg>
+                </span>
+                <span>男性</span>
+            </div>
+            <div class="legend-item">
+                <span class="gender-icon gender-female" title="女性">
+                    <svg viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M12,4A6,6 0 0,1 18,10C18,12.97 15.84,15.44 13,15.92V18H15V20H13V22H11V20H9V18H11V15.92C8.16,15.44 6,12.97 6,10A6,6 0 0,1 12,4M12,6A4,4 0 0,0 8,10A4,4 0 0,0 12,14A4,4 0 0,0 16,10A4,4 0 0,0 12,6Z" />
+                    </svg>
+                </span>
+                <span>女性</span>
+            </div>
+            <div class="legend-item">
+                <span class="child-order">1</span>
+                <span>子女序号（按出生日期排序）</span>
+            </div>
+        </div>
+        <!-- 容器 div 用于显示族谱 -->
+        <div id="tree-container"></div>
+        <!-- 导出按钮 -->
+        <div class="buttons">
+            <button id="exportPng">导出为图片</button>
+            <button id="exportPdf">导出为PDF</button>
+        </div>
+    </div>
+    
+    <!-- 自定义 JS 文件 -->
+    <script src="js/date-utils.js"></script>
+    <script src="js/tree-generator.js"></script>
+    <script src="js/core.js"></script>
+</body>
+</html>

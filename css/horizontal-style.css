@@ -1,0 +1,50 @@
+/* 水平样式 */
+.family-tree.horizontal {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.person.horizontal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white;
+    position: relative;
+}
+
+.person.horizontal .person-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.person.horizontal .person-details .name {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.person.horizontal .spouse-details .name {
+    display: flex;
+    align-items: center;
+}
+
+.person.horizontal .children {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+/* 当同时显示公历和农历时增加高度 */
+.person.horizontal .person-node {
+    min-height: 100px;
+}
+
+.person.horizontal .spouse-details {
+    min-height: 100px;
+} 

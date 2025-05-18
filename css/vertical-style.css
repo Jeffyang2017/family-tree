@@ -1,0 +1,71 @@
+/* 垂直样式 */
+.family-tree.vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.person.vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white;
+    position: relative;
+}
+
+.person.vertical .person-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.person.vertical .person-details {
+    flex: 1;
+}
+
+.person.vertical .person-details .name {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.person.vertical .spouse-details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    background: #e9ecef;
+    border-radius: 6px;
+    margin-left: 10px;
+}
+
+.person.vertical .spouse-details .name {
+    display: flex;
+    align-items: center;
+}
+
+.person.vertical .spouse-details .connector {
+    color: #999;
+    margin: 0 5px;
+}
+
+.person.vertical .children {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* 当同时显示公历和农历时增加高度 */
+.person.vertical .person-node {
+    min-height: 100px;
+}
+
+.person.vertical .spouse-details {
+    min-height: 100px;
+} 

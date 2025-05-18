@@ -1,0 +1,148 @@
+/* 树形图样式 */
+.person.tree {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.person.tree .person-node {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    max-width: 200px;
+    width: 100%;
+    position: relative;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+.person.tree .person-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.person.tree .spouse-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    padding: 10px;
+    background: rgba(240, 240, 240, 0.6);
+    border-radius: 6px;
+    width: 100%;
+}
+
+.person.tree .spouse-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.person.tree .name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.person.tree .child-order {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.person.tree .gender-icon {
+    margin-left: 8px;
+}
+
+.person.tree .dates {
+    font-size: 12px;
+    color: #777;
+}
+
+.person.tree .children {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.person.tree .children::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background-color: #ccc;
+    z-index: 1;
+}
+
+.person.tree .children-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    position: relative;
+}
+
+.person.tree .children-container::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 50px);
+    height: 2px;
+    background-color: #ccc;
+}
+
+.person.tree .child {
+    position: relative;
+}
+
+.person.tree .child::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background-color: #ccc;
+    z-index: 1;
+}
+
+.person.tree .generation {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #4CAF50;
+    color: white;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 10px;
+    z-index: 2;
+} 
