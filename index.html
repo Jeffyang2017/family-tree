@@ -24,6 +24,8 @@
     <script src="js/html2canvas.min.js"></script>
     <!-- 农历转换库 -->
     <script src="js/lunar.js"></script>
+    <!-- 示例数据 -->
+    <script src="js/sample-data.js"></script>
     <!-- 添加jsPDF本地备份以防CDN失效 -->
     <script>
         if(typeof window.jspdf === 'undefined') {
@@ -39,6 +41,7 @@
                 <input type="file" id="excelFile" accept=".xlsx, .xls"/>
                 <div class="file-help">
                     <small>上传Excel文件，包含列：人物ID、姓名、性别(男/女)、父亲ID、母亲ID、配偶ID、出生日期、死亡日期</small>
+                    <a href="#" id="downloadSample" onclick="downloadSampleExcel(); return false;">下载示例Excel表</a>
                 </div>
             </div>
             <div class="style-selector">
