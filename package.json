@@ -4,26 +4,16 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "vite",
-    "start": "vite",
-    "build": "vite build"
+    "dev": "vite"
   },
-  "keywords": ["family-tree", "genealogy", "ancestry", "visualization", "excel", "lunar-calendar"],
-  "author": "jeffyang2017 <jeffyang2017@foxmail.com>",
-  "license": "MIT",
-  "description": "A web-based family tree generator that allows users to create and visualize family relationships by uploading Excel files",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
   "devDependencies": {
     "vite": "^6.2.5"
   },
   "dependencies": {
     "lunar-javascript": "^1.7.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jeffyang2017/family-tree"
-  },
-  "bugs": {
-    "url": "https://github.com/jeffyang2017/family-tree/issues"
-  },
-  "homepage": "https://github.com/jeffyang2017/family-tree"
+  }
 }
